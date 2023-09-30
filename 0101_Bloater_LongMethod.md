@@ -1,6 +1,7 @@
 * Long Method -> Replace Temp with Query
+  basePrice 是從類別的欄位計算出來 (quantity, itemPrice) 的暫存變數;
   ```java
-  double CalculateTotal() 
+  public double CalculateTotal() 
   {
       double basePrice = quantity * itemPrice;
       if (basePrice > 1000)
@@ -13,9 +14,27 @@
       }
   }
   ```
-
+  extract method (extract 屬於這個物件的屬性部分)
   ```java
-  double CalculateTotal()
+  public double CalculateTotal() 
+  {
+      double basePrice = BasePrice();
+      if (basePrice > 1000)
+      {
+          return basePrice * 0.95;
+      }
+      else
+      {
+          return basePrice * 0.98;
+      }
+  }
+  private double BasePrice(){
+    return quantity * itemPrice;
+  }
+  ```
+  inline method
+  ```java
+  public double CalculateTotal()
   {
     if (BasePrice() > 1000)
     {
@@ -27,25 +46,31 @@
     }
   }
   
-  double BasePrice()
+  private double BasePrice()
   {
     return quantity * itemPrice;
   }
   ```
-
+  if..else 轉換成 三元運算。
   ```java
-  double CalculateTotal()
+  public double CalculateTotal()
   {
     return BasePrice() > 1000
       ? BasePrice() * 0.95
       : BasePrice() * 0.98;
   }
   
-  double BasePrice()
+  private double BasePrice()
   {
     return quantity * itemPrice;
   }
   ```
+  
+  我們有個 Product 類別，quantity, itemPrice 是他的欄位/屬性。
+
+  分析的時候，__**購買產品時**__ 有購買數量跟產品單價，__**計算價格時**__ 如果總金額大於1000可以打95折，否則打98折。
+
+
 * Long Method -> Introduce Parameter Object
 * Long Method -> Preserve Whole Object
   ```java
