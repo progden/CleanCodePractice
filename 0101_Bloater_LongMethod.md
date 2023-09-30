@@ -1,4 +1,5 @@
 * Long Method -> Replace Temp with Query
+
   basePrice 是從類別的欄位計算出來 (quantity, itemPrice) 的暫存變數;
   ```java
   public double CalculateTotal() 
@@ -73,6 +74,7 @@
 
 * Long Method -> Introduce Parameter Object
 * Long Method -> Preserve Whole Object
+
   ```java
   int low = daysTempRange.GetLow();
   int high = daysTempRange.GetHigh();
@@ -109,6 +111,7 @@
 
 * Long Method -> Replace Method with Method Object
   有時候整個業務邏輯關聯的資料太複雜，僅透過 Extract Method 等還是讓原來的物件太過複雜。
+
   ```java
   public class Order
   {
