@@ -28,7 +28,7 @@
     ```java
     boolean basePrice();
     boolean calBasePrice();
-    boolean getBasePriceByQuantityAndUnitPrice();
+    boolean getBasePriceByQuantityAndUnitPrice();  //說明裡面在做甚麼 
     ```
     
     ```java
@@ -37,7 +37,7 @@
     void quickSort();
     void sortByXXXXXX();
     ```
-    再來，當然我們也很常需要說明怎麼做的，這就好好寫在函數的註解上或是函數的內容真的要說明的部分吧。
+    再來，當然我們也很常需要說明怎麼做的，這就好好寫在**函數的註解**上或是函數的內容**真的要說明的部分**吧。
 
     關於效能，在這裡會有些像是 basePrice() 的重複計算，這些真的很影響效能嗎?
     其實不會的，且在大部分商業軟體的應用場合不需要這樣考慮。
