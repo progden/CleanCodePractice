@@ -86,3 +86,55 @@ class Plan{
 }
 ```
 
+## 當有出現狀態的常數使用時，使用 Replace Type Code with Class, Replace Type Code with Subclasses重構。
+應該有個 Replace type Code with State/Strategy 但在重構第二版已經移除了。
+### Replace Type Code with Class
+
+```java
+class Person {
+    int A = 1, B = 2, AB = 3, O = 4;
+    int bloodType;
+}
+```
+
+```java
+
+class Person {
+    BloodTypeEnum bloodType;
+
+    class Bloodtype {
+        public static BloodTypeEnum A = new BloodTypeEnum("A");
+        public static BloodTypeEnum B = new BloodTypeEnum("B");
+        public static BloodTypeEnum AB = new BloodTypeEnum("AB");
+        public static BloodTypeEnum O = new BloodTypeEnum("O");
+
+        public String bloodType;
+
+        private BloodType(String bloodType) {
+            this.bloodType = bloodType;
+```
+Enum 版本
+```java
+enum BloodType {
+    A, B, AB, O
+}
+```
+Enum 版本語法就單純使用上簡單很多，只是要是要擴充額外的行為的話，就開始要用一些沒那麼直覺的做法了(java)。
+https://www.baeldung.com/java-extending-enums
+C# 部分感覺還行。但這部分，我覺得是我在語法上還要多加修練。
+
+### Replace Type Code with Subclasses
+```javascript
+function createEmployee(name, type) {
+  return new Employee(name, type);
+}
+```
+
+```javascript
+function createEmployee(name, type) {
+    switch (type) {
+        case "engineer": return new Engineer(name);
+        case "salesman": return new Salesman(name);
+        case "manager":  return new Manager (name);
+    }
+```
