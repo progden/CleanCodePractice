@@ -138,3 +138,4 @@ function createEmployee(name, type) {
         case "manager":  return new Manager (name);
     }
 ```
+如果 Employee 類別已經有現有的繼承階層，那或許可以使用在上面的 ``Replace Type Code with Class`` 只處理 type 部分的邏輯。
