@@ -36,7 +36,9 @@ class Order {
 ```java
 boolean withinPlan = plan.withinRange(low, high);
 ```
+
 建立類別 & 建構式
+
 ```java
 boolean withinPlan = plan.withinRange(low, high);
         
@@ -48,7 +50,9 @@ class TempRange {
         this.low = low;
         this.high = high;
 ```
+
 增加一個使用建構式，並且將原本的參數傳入。
+
 ```java    
 boolean withinPlan = plan.withinRange(low, high, new TempRange(low, high));
 
@@ -58,7 +62,9 @@ class Plan{
     }
 }
 ```
+
 移除原本的 low, high 參數
+
 ```java    
 boolean withinPlan = plan.withinRange(new TempRange(low, high));
 
@@ -70,12 +76,13 @@ class Plan{
 ```
 
 ``Preserve whole object`` 就比較簡單
+
 ```java
 int low = range.getLow();
 int high = range.getHigh();
 boolean withinPlan = plan.withinRange(low, high);
 ```
-只是使用原來的"合理物件"，流程同前。
+只是使用"原來"且"合理物件"，流程同前。但是切記不要讓外部不合理的物件弄髒自己這一層。
 ```java
 boolean withinPlan = plan.withinRange(range);
 
