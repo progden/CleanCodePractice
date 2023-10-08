@@ -5,14 +5,14 @@
 越來越胖的 smell 通常不會是第一次寫就會出現，而是隨著程式一次一次地修改，慢慢地出現。
 (體重也是)
 
-以更為密集的檢查這些壞味道並進行修改會是好的實踐。
-另外確保更大規模的的修改沒有影響業務邏輯，單元測試/TDD更是其中的關鍵。
+以更為密集/快速的檢查壞味道並進行修改會是好的實踐。
+另外確保更大規模的的修改沒有影響業務邏輯，單元測試/TDD更是提升品質關鍵。
 這邊先只講壞味道(Code smells)
 
 ### Code, method, class 太長長到難改
   * Long Method (超過 5/10 行)
   * Large Class (太多職責，不夠單純)
-  * Primitive Obsession (只用 primitive/語言基本結構來組織邏輯)
+  * Primitive Obsession (只用 primitive/語言基本結構來組織邏輯、Type/Status Code)
   * Long Parameter List(超過 3~4 個參數)
   * Data Dumps (一些重複出現的區塊，例如資料庫連線處理、操作 Excel POI 有很多固定的寫法)
 
