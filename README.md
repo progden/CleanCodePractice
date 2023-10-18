@@ -14,7 +14,7 @@
   * Large Class (太多職責，不夠單純)
   * Primitive Obsession (只用 primitive/語言基本結構來組織邏輯、Type/Status Code)
   * Long Parameter List(超過 3~4 個參數)
-  * Data Dumps (一些重複出現的區塊，例如資料庫連線處理、操作 Excel POI 有很多固定的寫法)
+  * Data Clumps (一些重複出現的區塊，例如資料庫連線處理、操作 Excel POI 有很多固定的寫法)
 
 ### Code smell to Refactoring
 
